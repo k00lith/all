@@ -1,1 +1,0 @@
-This is iperf-3.9 (2020-08-17 released) compiled for windows.
