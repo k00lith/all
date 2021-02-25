@@ -1,0 +1,29 @@
+Server version: 8.0.22 MySQL Community Server - GPL
+
+[root@localhost ~]# systemctl stop mysqld
+[root@localhost ~]# systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
+[root@localhost ~]# systemctl start mysqld
+[root@localhost ~]# mysql -u root
+
+
+mysql> FLUSH PRIVILEGES;
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'pass55#22A';
+mysql> exit
+
+
+[root@localhost ~]# systemctl stop mysqld
+[root@localhost ~]# sudo systemctl unset-environment MYSQLD_OPTS
+[root@localhost ~]# systemctl start mysqld
+
+
+Test connection with new password:
+
+[root@localhost ~]# mysql -u root -p
+
+mysql> select user(), current_user();
++----------------+----------------+
+| user()         | current_user() |
++----------------+----------------+
+| root@localhost | root@localhost |
++----------------+----------------+
+1 row in set (0.00 sec)
