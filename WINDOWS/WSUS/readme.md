@@ -8,6 +8,7 @@
 ### Оптимизация:
 #### IIS
 В конфигурации "по-умолчанию" пул приложений "WsusPool" настроен неоптимально. Давайте донастроим его. Для этого запустите оснастку IIS, откройте "Application pools", выберите WsusPool и откройте "Advanced settings":
+![alt text](ALL/WINDOWS/WSUS/pic/IIS.png "IIS")
 
 По умолчанию процессу w3wp.exe выделяется мало памяти. Давайте уберем лимиты:
 
@@ -30,7 +31,7 @@ iisreset
 Microsoft рекомендует:
 > As a general rule, if the number of logical processors is less than or equal to 8, use the same number of data files as logical processors. If the number of logical processors > is greater than 8, use 8 data files and then if contention continues, increase the number of data files by multiples of 4 (up to the number of logical processors) until the  contention is reduced to acceptable levels or make changes to the workload/code.
 
-
+![alt text](ALL/WINDOWS/WSUS/pic/TempDB.png "TempDB")
 
 ### Очистка WSUS
 Для того, чтобы почистить WSUS (чтобы он начал работать или заработал быстрее), есть несколько средств:
