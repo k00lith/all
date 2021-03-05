@@ -421,20 +421,26 @@ Description: Application pool 'WsusPool' is being automatically disabled due to 
 Ответ:
 
 Немедленное обновление:
+```cmd
 Wuauclt.exe /detectnow
-
+```
 Перерегистрация на сервере WSUS с немедленным обновлением:
+```cmd
 Wuauclt.exe /resetauthorization /detectnow
-
+```
 Вопрос: Как проверить, работает ли клиент обновлений?
+
 Ответ: Смотрим файл %WINDIR%\\WindowsUpdate.log. Также можно заглянуть в системный журнал.
 
 #### Вопрос: Как проверить, работает ли сервер обновлений?
 Ответ 1: При помощи команды:
+```cmd
 wsusutil checkhealth
+```
 Сама утилита "wsusutil" находится в подпапке "Tools" папки, куда установлен сам WSUS (обычно - "%ProgramFiles%\Update Services\Tools".
 После окончания выполнения команды, смотрим результат в журнале событий "Приложения" ("Applications") от источника "Windows Server Update Services".
 При отсутствии ошибок, код сообщения будет "10000", категория - "Core" с описанием "WSUS is working correctly".
+
 Ответ 2: При помощи браузера нужно зайти на страничку WSUS: http://wsus_server_address.local:XXXX/ClientWebService/client.asmx, где "wsus_server_address.local" - адрес WSUS сервера, а "XXXX" - его порт.
 Если сервер работает нормально, получим ответ от WSUS сервера в виде "Ошибка сервера в приложении '/ClientWebService'".
 Иначе, будет какое-либо сообщение от IIS сервера (ошибки HTTP), типа не удается отобразить эту страницу или не хватает прав для… или неверно сконфигурирован… или у вас отсутствуют разрешения на просмотр этой страницы и т.п.
