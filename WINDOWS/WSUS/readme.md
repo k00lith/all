@@ -422,8 +422,10 @@ Description: Application pool 'WsusPool' is being automatically disabled due to 
 
 Немедленное обновление:
 Wuauclt.exe /detectnow
+
 Перерегистрация на сервере WSUS с немедленным обновлением:
 Wuauclt.exe /resetauthorization /detectnow
+
 Вопрос: Как проверить, работает ли клиент обновлений?
 Ответ: Смотрим файл %WINDIR%\\WindowsUpdate.log. Также можно заглянуть в системный журнал.
 
