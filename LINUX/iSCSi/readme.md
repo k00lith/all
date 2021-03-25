@@ -58,5 +58,5 @@ systemctl enable target
 ##### Добавить в iptables порт TCP-3260
 
 
-Имточник
-[![Watch the video]](https://www.youtube.com/watch?v=RqFWhZ-w-Dk)
+Имточник:
+[![youtube]](https://www.youtube.com/watch?v=RqFWhZ-w-Dk)
