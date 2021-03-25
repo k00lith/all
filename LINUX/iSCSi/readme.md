@@ -31,7 +31,7 @@ create /backstores/block/disk1
 cd/
 ```
 
-ДЛЯ ВТОРОГО ДИСКА==================================
+#### ДЛЯ ВТОРОГО ДИСКА:
 
 ```shell
 cd iscsi
@@ -52,6 +52,21 @@ exit
 systemctl restart target
 systemctl enable target
 ```
+
+---
+![alt text](pic/1.png "iscsi")
+
+---
+
+![alt text](pic/2.png "iscsi")
+
+---
+
+![alt text](pic/3.png "iscsi")
+
+---
+
+![alt text](pic/4.png "iscsi")
 
 ---
 
