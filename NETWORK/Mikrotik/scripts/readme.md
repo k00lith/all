@@ -9,3 +9,4 @@
 ```
 :log info $pingresultA; - необязательно, для проверки, вывод результата в лог
 
+![alt text](scripts/pic/111.png "scr")
