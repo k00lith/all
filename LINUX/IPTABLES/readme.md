@@ -75,8 +75,8 @@ Rules:
 #SSH
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
 #HTTPD
-#-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-#-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 #SYSLOG
 #-A INPUT -p udp -m udp --dport 514 -s 10.20.0.1/32 -j ACCEPT
 #-A INPUT -p udp -m udp --dport 514 -s 10.20.0.2/32 -j ACCEPT
