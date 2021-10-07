@@ -81,6 +81,11 @@ systemctl start iptables.service
 ```
 
 9.  MAKE iptables FILE IN root DIR (for example)
+
+RULES:
+
+https://github.com/k00lith/ALL/blob/master/LINUX/IPTABLES/readme.md
+
 ```
 cd /root/
 vi /root/iptables-rules
