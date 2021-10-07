@@ -33,6 +33,14 @@ iptables -n -L -v --line-numbers
 #### RULES:
 
 --------------------------------------
+##### Attention! 
+do not forget to change the name of the interface in the rules below to the real interface in the system. In this line:
+
+```sh
+-A OUTPUT -o enp0s3 -j ACCEPT
+```
+
+Rules:
 
 ```sh
 # Firewall configuration written by system-config-firewall
