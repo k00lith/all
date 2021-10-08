@@ -55,6 +55,10 @@ cd /opt/unetlab/addons/qemu/linux-CENTOS7
 /opt/unetlab/wrappers/unl_wrapper -a fixpermissions
 ```
 
+готово.
+
+-----------------------------
+
 Для CentOS7 минимал можно установить GUI и включать когда потребуется например браузер:
 
 ```sh
