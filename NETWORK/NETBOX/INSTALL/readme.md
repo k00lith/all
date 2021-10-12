@@ -1,6 +1,10 @@
 ### INSTALL NETBOXv3 on CentOS7
 ------------------------------------------
 
+Official documentation:
+https://netbox.readthedocs.io/en/stable/
+
+
 #### BRIEFLY:
 
 1.  PREPARE CentOS7 VM
