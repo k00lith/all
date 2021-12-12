@@ -74,7 +74,8 @@ Rules:
 -A INPUT -i lo -j ACCEPT
 #SSH
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
-#-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -s 192.168.0.0/24 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -s 112.76.32.0/19 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -s 87.0.131.207/32 -j ACCEPT
 #HTTPD
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
