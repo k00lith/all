@@ -77,7 +77,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/httpd/ssl/priva
 ```bash
 [mariadb]
 name = MariaDB
-baseurl = https://mirror.mariadb.org/yum/10.8.3/centos7-amd64/
+baseurl = https://mirror.mariadb.org/yum/10.8.4/centos7-amd64/
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
