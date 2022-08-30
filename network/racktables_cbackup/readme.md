@@ -244,3 +244,72 @@ https://cbackup.readthedocs.io/en/latest/getting-started/servers/centos7/
 yum install php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
 yum install php-gmp php-pecl-zip php-pdo php-mysqlnd php-intl php-pecl-ssh2 php-snmp php-mbstring php-bcmath php-common -y
 ```
+
+
+
+Необходимо поправить конфиг (обратить внимание на http, у меня было https - шедулер не стартовал):
+```bash
+[root@ipam httpd]# cat /opt/cbackup/bin/application.properties
+#sshd
+sshd.shell.port=8437
+sshd.shell.enabled=true
+sshd.shell.username=cbadmin
+sshd.shell.password=oxdsufht2
+sshd.shell.host=localhost
+sshd.shell.auth.authType=SIMPLE
+sshd.shell.prompt.title=cbackup
+
+#spring
+spring.main.banner-mode=off
+
+#cbackup
+cbackup.scheme=http
+cbackup.site=10.20.1.229/cbackup/index.php
+cbackup.token=2D27022E-3484-4CAC-B86A-3CD19C3FA1C5
+```
+
+И апач (я сделал иак, наверно, можно и не добавлять для cBackup)
+```bash
+[root@ipam httpd]# cat /etc/httpd/conf.d/vhosts.conf
+<VirtualHost 192.168.23.137:443>
+        AddType application/x-httpd-php .php
+        AddType application/x-httpd-php-source .phps
+
+        ErrorLog logs/ssl_error_log
+        TransferLog logs/ssl_access_log
+        LogLevel warn
+        SSLEngine on
+        SSLProtocol all -SSLv2 -SSLv3
+        SSLCipherSuite HIGH:3DES:!aNULL:!MD5:!SEED:!IDEA
+        SSLCertificateFile /etc/httpd/ssl/apache-selfsigned.crt
+        SSLCertificateKeyFile /etc/httpd/ssl/private/apache-selfsigned.key
+        <Directory "/opt/cbackup">
+            Options All
+            AllowOverride All
+            require all granted
+            DirectoryIndex index.php
+    </Directory>
+        Alias /racktables /var/www/html/racktables/wwwroot/
+</VirtualHost>
+
+
+
+<VirtualHost 10.20.1.229:443>
+        AddType application/x-httpd-php .php
+        AddType application/x-httpd-php-source .phps
+
+        ErrorLog logs/ssl_error_log
+        TransferLog logs/ssl_access_log
+        LogLevel warn
+        SSLEngine on
+        SSLProtocol all -SSLv2 -SSLv3
+        SSLCipherSuite HIGH:3DES:!aNULL:!MD5:!SEED:!IDEA
+        SSLCertificateFile /etc/httpd/ssl/apache-selfsigned.crt
+        SSLCertificateKeyFile /etc/httpd/ssl/private/apache-selfsigned.key
+        <Directory /var/www/html/racktables/wwwroot/>
+                DirectoryIndex index.php
+                Require all granted
+        </Directory>
+        Alias /r
+```
+
