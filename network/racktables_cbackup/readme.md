@@ -220,7 +220,7 @@ chmod a=rw /var/www/html/racktables/wwwroot/inc/secret.php
 ```
 #### 22. Переходим по ссылке на веб-интерфейс (у нас уже по ssl):
 ```bash
-https://192.168.23.137/racktables/?module=installer/
+https://192.168.23.137/racktables/?module=installer
 ```
 #### 23. Далее в процессе утсановки нужно будет выполнить команду:
 ```bash
