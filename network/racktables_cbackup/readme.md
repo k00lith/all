@@ -310,6 +310,8 @@ cbackup.token=2D27022E-3484-4CAC-B86A-3CD19C3FA1C5
                 DirectoryIndex index.php
                 Require all granted
         </Directory>
-        Alias /r
+        Alias /racktables /var/www/html/racktables/wwwroot/
+</VirtualHost>
+
 ```
 
