@@ -112,7 +112,7 @@ mysqlcheck -uroot -pPassword -o zabbix_db
 ```
 Для всех 
 ```bash
-mysqlcheck -uroot -pfotevneo --all-databases
+mysqlcheck -uroot -pPassword --all-databases
 ```
 
 Второй скрипт
