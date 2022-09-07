@@ -1,8 +1,4 @@
-### Установка RackTables и cBackup на сервер CentOS7 x64 minimal
-
-https://www.racktables.org/
-
-https://cbackup.me/ru/
+### Установка RackTables, Rancid, PHPiPAM на сервер CentOS7 x64 minimal
 
 
 #### 1. Начало:
