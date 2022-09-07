@@ -92,7 +92,12 @@ systemctl enable mariadb.service
 mariadb-secure-installation
 ```
 
-#### 13. НАПИСАТЬ ПРО ОПТИМИЗАЦИЮ БАЗ ДАННЫХ ПО КРОНУ
+#### 13. ОПТИМИЗАЦИЯ БАЗ ДАННЫХ ПО КРОНУ
+
+```bash
+mysql -uroot –p
+MariaDB [(none)]> show databases;
+```
 
 Это когда у нас уже есть базы, которые нужно оптимизировать
 
