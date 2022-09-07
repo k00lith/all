@@ -107,11 +107,19 @@ MariaDB [(none)]> show databases;
 05 01 * * * /root/mysql_optimaze1
 35 01 * * * /root/mysql_optimaze2
 ```
+
+Первый скрипт - тут одна база указана, а можно все, чуть ниже
 ```bash
 vim /root/mysql_optimaze1
 #!/bin/sh
 mysqlcheck -uroot -pPassword -o zabbix_db
 ```
+Для всех 
+```bash
+mysqlcheck -uroot -pfotevneo --all-databases
+```
+
+Второй скрипт
 ```bash
 vim /root/mysql_optimaze2
 #!/bin/sh
