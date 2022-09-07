@@ -297,7 +297,7 @@ passwd rancid
 ```
 #### 5. Компилируем и устанавлваем rancid.
 ```bash
-# pwd	
+pwd	
 cd /root/src/rancid-3.13
 ./configure --prefix=/home/rancid
 make install
@@ -374,37 +374,46 @@ add password hp1313 nimda
 Конкретный маршрутизатор Cisco. 
 В строке пароля указывается пользовательский и enable пароль. 
 
+```bash
 add method CISCO-ROUTER-1 ssh
 add user CISCO-ROUTER-1 USER-NAME
 add password CISCO-ROUTER-1 USER-PASSWORD ENABLE-PASSWORD
-
+```
 Несколько маршрутизаторов Cisco можно записать через *. 
 
+```bash
 add method CISCO-ROUTER-* ssh
 add user CISCO-ROUTER-* USER-NAME
 add password CISCO-ROUTER-* USER-PASSWORD ENABLE-PASSWORD
+```
 
 У маршрутизаторов Juniper enable пароля нет, пишем только пользовательский пароль. 
 
+```bash
 add method SRX* ssh
 add user SRX* USER-NAME
 add password SRX* USER-PASSWORD
+```
 
 Для коммутаторов HP Procurve надо включать опцию autoenable. 
 
 Пароль оператора и менеджера был одинаковый. 
 
+```bash
 add method PROCURVE-SW* ssh
 add user PROCURVE-SW* USER-NAME
 add autoenable PROCURVE-SW* 1
 add password PROCURVE-SW* USER-PASSWORD
+```
 
 Настройка для маршрутизаторов Brocade CER. 
 
+```bash
 add method BROCADE-CER* ssh
 add user BROCADE-CER* USER-NAME
 add autoenable BROCADE-CER* 1
 add password BROCADE-CER* USER-PASSWORD
+```
 
 Вручную запускаем rancid (от пользователя rancid) и проверяем, что конфигурация снялась.
 (hp1313 доложен быть прописан в hosts)
@@ -624,7 +633,7 @@ usermod -a -G netadm apache
 
 #### 7. Создаем mysql базу данных и пользователей.
 ```bash
-# mysql -uroot –p
+mysql -uroot –p
 mysql> create database viewvc_db;
 mysql> create user 'sqladm1'@'localhost' identified by 'LZ9fxocjhGOuVewMaR1A';
 mysql> grant all privileges on viewvc_db.* to 'sqladm1'@'localhost' with grant option;
