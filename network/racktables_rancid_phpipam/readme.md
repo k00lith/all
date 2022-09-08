@@ -1,6 +1,12 @@
 ### Установка RackTables, Rancid, PHPiPAM на сервер CentOS7 x64 minimal
 
+#### Оглавление:
+[Общее](#common) 
+[Оптимизация баз данных SQL](#optima) 
+[Заголовки](#headers) 
+[Заголовки](#headers) 
 
+<a name="common"><h2>Общее</h2></a>
 #### 1. Начало:
 
 ```bash
@@ -88,7 +94,8 @@ systemctl enable mariadb.service
 mariadb-secure-installation
 ```
 
-#### 13. ОПТИМИЗАЦИЯ БАЗ ДАННЫХ ПО КРОНУ
+<a name="optima"><h2>Оптимизация баз данных SQL</h2></a>
+#### 13. Смотрим какие есть базы
 
 ```bash
 mysql -uroot –p
