@@ -612,9 +612,9 @@ SSLCryptoDevice builtin
         AuthUserFile /etc/httpd/conf/.htpasswd-viewvc
         Require valid-user
     </Directory>
-	<Directory /var/www/html/racktables/wwwroot/>
-                DirectoryIndex index.php
-                Require all granted
+    <Directory /var/www/html/racktables/wwwroot/>
+        DirectoryIndex index.php
+        Require all granted
     </Directory>
     Alias /racktables /var/www/html/racktables/wwwroot/
 </VirtualHost>
