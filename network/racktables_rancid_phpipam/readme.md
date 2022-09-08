@@ -142,8 +142,8 @@ chmod u+x /root/mysql_optimaze2
 35 01 * * * /root/mysql_optimaze2
 ```
 
-
-#### 14. СТАВИМ РАКТЭЙБЛС
+<a name="rack"><h2>Ставим RACKTABLES</h2></a>
+#### 14. Начало
 ```bash
 mysql -uroot -p
 ```
@@ -226,7 +226,7 @@ yum install php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fi
 systemctl restart httpd.service
 ```
 
-#### 20. Ставим RACKTABLES:
+#### 20. Качаем RACKTABLES:
 ```bash
 cd /usr/src/
 wget https://sourceforge.net/projects/racktables/files/RackTables-0.22.0.tar.gz --no-check-certificate
@@ -282,7 +282,7 @@ chown apache:apache /var/www/html/racktables/wwwroot/inc/secret.php; chmod 440 /
 https://192.168.13.245/racktables/
 ```
 
-
+<a name="rancid"><h2>Ставим RANCID</h2></a>
 ### RANCID + ViewVC:
 
 #### 1. Ставим вспомогательные пакеты:
@@ -504,6 +504,8 @@ Host *
     UserKnownHostsFile /dev/null
 ```
 
+
+<a name="view"><h2>Ставим ViewVC</h2></a>
 ### Установка ViewVC
 
 #### 1. Скачиваем и распаковываем ViewVC. Version 1.1.26 (released 24-Jan-2017)
@@ -749,6 +751,7 @@ systemctl restart httpd
 https://Х.Х.Х.Х:/viewvc
 ```
 
+<a name="ipam"><h2>Ставим PHPIPAM</h2></a>
 ### Установка PHPIPAM
 
 #### Делаем по мастеру, но несколько уточнений:
