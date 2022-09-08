@@ -604,14 +604,14 @@ SSLCryptoDevice builtin
     SSLCertificateFile /etc/httpd/ssl/apache-selfsigned.crt
     SSLCertificateKeyFile /etc/httpd/ssl/private/apache-selfsigned.key
     ScriptAlias /viewvc /var/www/cgi-bin/viewvc.cgi
-    <Directory /viewvc/>
+    <Location /viewvc>
         Order deny,allow
         Allow from all
         Authtype Basic
         Authname "Password Required"
         AuthUserFile /etc/httpd/conf/.htpasswd-viewvc
         Require valid-user
-    </Directory>
+    </Location>
     <Directory /var/www/html/racktables/wwwroot/>
         DirectoryIndex index.php
         Require all granted
