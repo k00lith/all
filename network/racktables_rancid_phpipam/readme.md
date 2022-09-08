@@ -760,5 +760,5 @@ if(!defined('BASE'))
 define('BASE', "/phpipam/");
 ```
 
-#### Заход бдет вот такой:
+#### Заход будет вот такой:
 https://X.X.X.X/phpipam/
