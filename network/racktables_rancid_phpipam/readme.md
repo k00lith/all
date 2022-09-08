@@ -5,9 +5,13 @@
 
 [Оптимизация баз данных SQL](#optima) 
 
-[Заголовки](#headers) 
+[Ставим RACKTABLES](#rack) 
 
-[Заголовки](#headers) 
+[Ставим RANCID](#rancid) 
+
+[Ставим ViewVC](#view) 
+
+[Ставим PHPIPAM](#ipam) 
 
 
 <a name="common"><h2>Общее</h2></a>
