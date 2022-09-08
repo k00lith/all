@@ -738,5 +738,26 @@ systemctl restart httpd
 https://Х.Х.Х.Х:/viewvc
 ```
 
+### Установка PHPIPAM
+
+#### Делаем по мастеру, но несколько уточнений:
+https://phpipam.net/phpipam-installation-on-centos-7/
+
+#### Ставим доп пакеты
+```bash
+yum install git php-pear php-snmp php-xml gmp-devel php-gmp
+```
+#### Не надо создавать базу и прописывать параметры, далее по мастеру это все делается автоматом
+
+#### Устанавливал в отдельную папку в /var/www/html/phpipam
+#### Поэтому нужно поправить файл конфигурации
+```bash
+mcedit /var/www/html/phpipam/config.php
+```
+Вот это:
+```bash
+if(!defined('BASE'))
+define('BASE', "/phpipam/");
+```
 
 
