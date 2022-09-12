@@ -652,9 +652,9 @@ usermod -a -G netadm apache
 ```bash
 mysql -uroot –p
 mysql> create database viewvc_db;
-mysql> create user 'sqladm1'@'localhost' identified by 'LZ9fxocjhGOuVewMaR1A';
+mysql> create user 'sqladm1'@'localhost' identified by '1234';
 mysql> grant all privileges on viewvc_db.* to 'sqladm1'@'localhost' with grant option;
-mysql> create user 'sqladm2'@'localhost' identified by 'RtQUNwR74ENhhsV7T4PV';
+mysql> create user 'sqladm2'@'localhost' identified by '12345';
 mysql> grant all privileges on viewvc_db.* to 'sqladm2'@'localhost' with grant option;
 mysql> flush privileges;
 ```
@@ -685,9 +685,9 @@ host = localhost
 port = 3306
 database_name = viewvc_db
 user = sqladm1
-passwd = gbpltw
+passwd = 1234
 readonly_user = sqladm2
-readonly_passwd = gbpltw2
+readonly_passwd = 12345
 ```
 Далее по тексту:
 ```bash
@@ -713,7 +713,7 @@ user = sqladm1
 ## passwd: Password of user with read/write privileges to the database
 ## specified by the 'database_name' configuration option.
 ##
-passwd = LZ9fxocjhGOuVewMaR1A
+passwd = 1234
 ## readonly_user: Username of user with read privileges to the database
 ## specified by the 'database_name' configuration option.
 ##
@@ -721,7 +721,7 @@ readonly_user = sqladm2
 ## readonly_passwd: Password of user with read privileges to the database
 ## specified by the 'database_name' configuration option.
 ##
-readonly_passwd = RtQUNwR74ENhhsV7T4PV
+readonly_passwd = 12345
 ...
 ```
 
