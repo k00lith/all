@@ -13,6 +13,8 @@
 
 [Ставим PHPIPAM](#ipam) 
 
+[Бэкап SQL](#bkp) 
+
 
 <a name="common"><h2>Общее</h2></a>
 #### 1. Начало:
