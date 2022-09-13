@@ -811,7 +811,7 @@ date.timezone = Europe/Ljubljana
 systemctl restart httpd
 ```
 
-#### Устанавливал в отдельную папку в /var/www/html/phpipam
+#### Устанавливаем в отдельную папку в /var/www/html/phpipam
 ```bash
 [root@localhost ~]# cd /var/www/html/
 [root@localhost html]# git clone https://github.com/phpipam/phpipam.git phpipam
