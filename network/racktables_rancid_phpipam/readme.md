@@ -780,3 +780,24 @@ define('BASE', "/phpipam/");
 
 #### Заход будет вот такой:
 https://X.X.X.X/phpipam/
+
+
+<a name="bkp"><h2>БЭКАП БАЗ SQL</h2></a>
+### БЭКАП БАЗ
+
+Так будет выглядеть crontab:
+```bash
+crontab -l
+```
+
+```bash
+05 01 * * * /root/mysql_optimaze1
+35 01 * * * /root/mysql_optimaze2
+#
+# Backup IP address table, remove backups older than 10 days
+#
+35 02 * * * /usr/bin/mysqldump -uroot -pPassword phpipam > /root/db/bkp/phpipam_bkp_$(date +"\%y\%m\%d").db
+35 03 * * * /usr/bin/mysqldump -uroot -pPassword racktables > /root/db/bkp/racktables_bkp_$(date +"\%y\%m\%d").db
+35 04 * * * /usr/bin/mysqldump -uroot -pPassword viewvc_db > /root/db/bkp/viewvc_db_bkp_$(date +"\%y\%m\%d").db
+35 05 * * * /usr/bin/find /root/db/bkp/ -ctime +10 -exec rm {} \;
+```
