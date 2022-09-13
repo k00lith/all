@@ -11,6 +11,8 @@
 
 [Ставим ViewVC](#view) 
 
+[Дебаг RANCID](#debug) 
+
 [Ставим PHPIPAM](#ipam) 
 
 [Бэкап SQL](#bkp) 
