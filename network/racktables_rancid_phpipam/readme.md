@@ -784,17 +784,49 @@ https://Х.Х.Х.Х:/viewvc
 <a name="ipam"><h2>Ставим PHPIPAM</h2></a>
 ### Установка PHPIPAM
 
-#### Делаем по мастеру, но несколько уточнений:
+#### Инструкция:
 https://phpipam.net/phpipam-installation-on-centos-7/
+
+#### Так как у нас уже стоит апач и sql , то из всей инструкции нам нужно сделать только следующее:
 
 #### Ставим доп пакеты
 ```bash
 yum install git php-pear php-snmp php-xml gmp-devel php-gmp
 ```
-#### Не надо создавать базу и прописывать параметры, далее по мастеру это все делается автоматом
+
+```bash
+[root@localhost ~]# mcedit /etc/environment
+LC_ALL=en_US.utf-8
+LANG=en_US.utf-8
+```
+
+```bash
+[root@localhost html]# mcedit /etc/php.ini
+; Defines the default timezone used by the date functions
+; http://php.net/date.timezone
+date.timezone = Europe/Ljubljana
+```
+
+```bash
+systemctl restart httpd
+```
 
 #### Устанавливал в отдельную папку в /var/www/html/phpipam
-#### Поэтому нужно поправить файл конфигурации
+```bash
+[root@localhost ~]# cd /var/www/html/
+[root@localhost html]# git clone https://github.com/phpipam/phpipam.git phpipam
+[root@localhost html]# cd phpipam
+[root@localhost html]# git checkout 1.5
+```
+
+```bash
+[root@localhost html]# cp config.dist.php config.php
+```
+
+#### Не надо создавать базу и прописывать параметры, далее по мастеру это все делается автоматом
+
+
+####  Нужно поправить файл конфигурации
 ```bash
 mcedit /var/www/html/phpipam/config.php
 ```
@@ -807,6 +839,7 @@ define('BASE', "/phpipam/");
 #### Заход будет вот такой:
 https://X.X.X.X/phpipam/
 
+#### Дальше проходим по мастеру и выбираем автоматическое создание базы sql (указываем пароль от рута базы, чтобы автоустановщик смог сделать свои дела)
 
 ##### Может быть ошибка логин/пароля из-за браузера, т.е. из-за отключеных javascript и тд. Нужно пробовать в разных браузерах.
 
