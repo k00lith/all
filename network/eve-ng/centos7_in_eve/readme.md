@@ -58,18 +58,3 @@ cd /opt/unetlab/addons/qemu/linux-CENTOS7
 готово.
 
 -----------------------------
-
-Для CentOS7 минимал можно установить GUI и включать когда потребуется например браузер:
-
-```sh
-sudo yum -y groups install "GNOME Desktop"
-echo "exec gnome-session" >> ~/.xinitrc
-startx
-```
-
-Если нужно чтобы GUI стартовал автоматом после загрузки системы то
-
-```sh
-systemctl set-default graphical.target
-```
-(лучше запускать по необходимости, без автозагрузки)
