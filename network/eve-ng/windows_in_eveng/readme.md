@@ -33,7 +33,7 @@
 8. Добавить объект Windows Server, запустить и начать установку Windows
 
 9. Установить ПРАВИЛЬНО!!! Windows
-	Выбрать Drive, FDD B/storage/2003R2/AMD64
+	Выбрать Floppy Drive, FDD B/storage/2003R2/AMD64
 
 
 В Терминале:
