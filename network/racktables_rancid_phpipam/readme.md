@@ -781,6 +781,23 @@ https://Х.Х.Х.Х:/viewvc
 ```bash
 /home/rancid/var/logs
 ```
+
+Также , на примере, huawei , можно командой убирать строки конфига, которые могут постоянно меняться или просто строки с паролями - файл rancid.types.base:
+
+```bash
+# Hauwei VRP (S5720)
+vrp;script;rancid -t vrp
+vrp;login;xilogin
+vrp;module;vrp
+vrp;inloop;vrp::inloop
+vrp;command;vrp::DispVersion;display version
+vrp;command;vrp::WriteTerm;display current-configuration | excl Last | excl password
+```
+
+Тут убираются строки с паролями и строки где указывается когда был последний раз сохранена конфига на утсройстве. Т.к. в моем кейсе раз в час конфига сохраняется и отправляется на tftp , то такие строки все время меняется и рансид будет постоянно раз в час их снимать - это не нужно
+
+
+
 <a name="ipam"><h2>Ставим PHPIPAM</h2></a>
 ### Установка PHPIPAM
 
