@@ -285,6 +285,11 @@ https://192.168.23.137/racktables/?module=installer
 ```bash
 chown apache:apache /var/www/html/racktables/wwwroot/inc/secret.php; chmod 440 /var/www/html/racktables/wwwroot/inc/secret.php
 ```
+или
+```bash
+chmod a=rw '/var/www/html/racktables/wwwroot/inc/secret.php'
+```
+
 И, там же в мастере, установить пароль.
 
 #### 24.После установки вэб-интерфейс доступен по адресу (не забыть про правила iptables):
