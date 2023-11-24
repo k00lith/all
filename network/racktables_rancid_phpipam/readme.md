@@ -26,6 +26,8 @@ yum update
 yum install epel-release
 yum update
 yum -y install net-tools.x86_64 mc vim wget gzip mlocate
+yum -y install open-vm-tools.x86_64
+yum -y install mtr
 updatedb
 ```
 
