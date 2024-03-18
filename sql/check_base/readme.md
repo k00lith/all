@@ -26,6 +26,11 @@ mysqlcheck -uroot -pPa$$w0rd --all-databases
 mysqlcheck -u root -pPa$$w0rd --auto-repair --check --all-databases
 ```
 
+Делаем тип файла экзекьютбл
+```
+chmod +x mysql_optimaze1
+chmod +x mysql_optimaze2
+```
 
 Задание в CRON:
 
