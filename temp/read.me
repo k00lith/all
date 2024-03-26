@@ -1,0 +1,87 @@
+apt-get install build-essential gnupg2 gcc make -y
+apt-get install lynx -y
+
+cd /tmp
+
+lynx http://www.softether-download.com/files/softether/
+или
+wget http://www.softether-download.com/files/softether/v4.42-9798-rtm-2023.06.30-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.42-9798-rtm-2023.06.30-linux-x64-64bit.tar.gz
+
+tar -xvzf softether-vpnserver-v4.42-9798-rtm-2023.06.30-linux-x64-64bit.tar.gz
+
+cd vpnserver
+make
+
+mcedit /etc/init.d/vpnserver
+
+=======
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides: vpnserver
+# Required-Start:
+# Required-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop:
+# Short-Description: SoftEtherVPNServer
+### END INIT INFO
+
+# chkconfig: 2345 99 01
+# description: SoftEther VPN Server
+DAEMON=/usr/local/vpnserver/vpnserver
+LOCK=/var/lock/subsys/vpnserver
+test -x $DAEMON || exit 0
+case "$1" in
+start)
+$DAEMON start
+touch $LOCK
+;;
+stop)
+$DAEMON stop
+rm $LOCK
+;;
+restart)
+$DAEMON stop
+sleep 3
+$DAEMON start
+;;
+*)
+echo "Usage: $0 {start|stop|restart}"
+exit 1
+esac
+
+=======
+
+cd /tmp/
+mv vpnserver /usr/local/
+
+cd /usr/local/vpnserver
+chmod 600 *
+chmod 700 vpnserver
+chmod 700 vpncmd
+
+update-rc.d vpnserver defaults
+
+mcedit /lib/systemd/system/vpnserver.service
+
+=======
+Description=SoftEther VPN Server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/vpnserver/vpnserver start
+ExecStop=/usr/local/vpnserver/vpnserver stop
+
+[Install]
+WantedBy=multi-user.target
+esac
+exit 0
+=======
+
+mkdir /var/lock/subsys
+chmod 755 /etc/init.d/vpnserver
+
+
+/etc/init.d/vpnserver start
+
+update-rc.d vpnserver defaults
