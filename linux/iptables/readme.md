@@ -20,7 +20,7 @@ vi /root/iptables-rules
 ACTIVATE:
 
 ```sh
-iptables-restore < iptables-rules
+iptables-restore < /root/iptables-rules
 service iptables save
 ```
 
