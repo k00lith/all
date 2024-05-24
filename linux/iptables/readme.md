@@ -40,7 +40,7 @@ do not forget to change the name of the interface in the rules below to the real
 -A OUTPUT -o enp0s3 -j ACCEPT
 ```
 
-Rules:
+Example Config Rules:
 
 ```sh
 # Firewall configuration written by system-config-firewall
