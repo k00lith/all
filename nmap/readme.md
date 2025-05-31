@@ -42,3 +42,9 @@ sudo nmap --script vuln 1.1.1.1 -p 25,80,465,587,993,995,8443,8291 -v
 sudo nmap --script vuln 1.1.1.1 -p 8291 -v
 sudo nmap --script vuln 1.1.1.1 -p 80,443 -v
 ```
+
+#### Вариант сканирования
+```
+sudo nmap --min-parallelism 100 -sT -sU 1.1.1.0/24
+```
+
