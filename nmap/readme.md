@@ -48,3 +48,11 @@ sudo nmap --script vuln 1.1.1.1 -p 80,443 -v
 sudo nmap --min-parallelism 100 -sT -sU 1.1.1.0/24
 ```
 
+
+#### NETCAT сканирование
+Проверка доступности snmp
+
+nc -vzu 1.1.1.1 161
+Connection to 1.1.1.1 161 port [udp/snmp] succeeded!
+
+
